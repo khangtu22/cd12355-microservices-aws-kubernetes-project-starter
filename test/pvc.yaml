@@ -7,4 +7,5 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 1Gi
+      storage: 1Gi  # Chỉ định kích thước phù hợp
+  storageClassName: gp2  # Thêm dòng này

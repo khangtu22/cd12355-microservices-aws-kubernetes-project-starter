@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: my-project-three-db-configmap
 data:
-  DB_NAME: "postgres"
-  DB_USER: "postgres"
+  DB_NAME: "mydatabase"
+  DB_USER: "myuser"
   DB_HOST: "inventory-postgresql-prod.prod.svc.cluster.local"
   DB_PORT: "5432"
