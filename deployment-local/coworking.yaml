@@ -8,10 +8,10 @@ spec:
   selector:
     service: coworking
   ports:
-  - name: "5153"
-    protocol: TCP
-    port: 5153
-    targetPort: 5153
+    - name: "5153"
+      protocol: TCP
+      port: 5153
+      targetPort: 5153
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -30,29 +30,49 @@ spec:
         service: coworking
     spec:
       containers:
-      - name: coworking
-        # Locally hosted docker image
-        image: 010928182936.dkr.ecr.us-east-1.amazonaws.com/coworking-project3:latest
-        imagePullPolicy: IfNotPresent
-        livenessProbe:
-          httpGet:
-            path: /health_check
-            port: 5153
-          initialDelaySeconds: 5
-          timeoutSeconds: 2
-        readinessProbe:
-          httpGet:
-            path: "/readiness_check"
-            port: 5153
-          initialDelaySeconds: 5
-          timeoutSeconds: 5
-        envFrom:
-        - configMapRef:
-            name: coworking-config
-        env:
-        - name: DB_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: coworking-secret
-              key: db-password
+        - name: coworking
+          # Locally hosted docker image
+          image: 010928182936.dkr.ecr.us-east-1.amazonaws.com/coworking-project3:latest
+          imagePullPolicy: IfNotPresent
+          livenessProbe:
+            httpGet:
+              path: /health_check
+              port: 5153
+            initialDelaySeconds: 5
+            timeoutSeconds: 2
+          readinessProbe:
+            httpGet:
+              path: "/readiness_check"
+              port: 5153
+            initialDelaySeconds: 5
+            timeoutSeconds: 5
+          envFrom:
+            - configMapRef:
+                name: coworking-config
+          env:
+            - name: DB_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: coworking-config
+                  key: DB_HOST
+            - name: DB_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: coworking-config
+                  key: DB_PORT
+            - name: DB_USERNAME
+              valueFrom:
+                configMapKeyRef:
+                  name: coworking-config
+                  key: DB_USERNAME
+            - name: DB_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: coworking-config
+                  key: DB_NAME
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: coworking-secret
+                  key: DB_PASSWORD
       restartPolicy: Always
