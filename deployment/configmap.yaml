@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: my-project-three-db-configmap
+  name: coworking-config
 data:
   DB_NAME: "mydatabase"
   DB_USER: "myuser"
-  DB_HOST: "inventory-postgresql-prod.prod.svc.cluster.local"
-  DB_PORT: "5432"
+  DB_HOST: "postgresql.default.svc.cluster.local"
+  DB_PORT: "5433"
