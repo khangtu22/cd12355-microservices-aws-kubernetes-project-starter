@@ -5,5 +5,5 @@ metadata:
 data:
   DB_NAME: "coworking_db"
   DB_USER: "coworking_user"
-  DB_HOST: "coworking-db.example.com"
+  DB_HOST: "postgresql-service"
   DB_PORT: "5432"
