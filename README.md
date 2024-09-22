@@ -150,3 +150,4 @@ aws eks update-cluster-config     --region us-east-1     --name my-cluster     -
 ## **Conclusion**
 
 This README provides a step-by-step guide for creating an EKS cluster, configuring CodeBuild, interacting with your Kubernetes resources, and enabling logging for better observability. Follow these instructions to deploy your application and manage your infrastructure effectively.
+
