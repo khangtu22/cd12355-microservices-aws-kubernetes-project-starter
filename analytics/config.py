@@ -17,5 +17,4 @@ app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = f"postgresql://{db_username}:{db_password}@{db_host}:{db_port}/{db_name}"
 
 db = SQLAlchemy(app)
-kubectl config current-context
 app.logger.setLevel(logging.DEBUG)

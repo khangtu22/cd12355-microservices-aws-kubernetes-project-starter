@@ -1,4 +1,4 @@
-INSERT INTO tokens (user_id, token, created_at, used_at) VALUES ('500', '902912', '2023-02-10 13:32:58.224409', NULL);
+INSERT INTO tokens (user_id, token, created_at, used_at) VALUES ('1', '902912', '2023-02-10 13:32:58.224409', NULL);
 INSERT INTO tokens (user_id, token, created_at, used_at) VALUES ('173', '940181', '2023-02-08 08:37:58.224425', '2023-02-08 08:29:58.224425');
 INSERT INTO tokens (user_id, token, created_at, used_at) VALUES ('167', '542454', '2023-02-11 13:08:58.224435', '2023-02-11 13:02:58.224435');
 INSERT INTO tokens (user_id, token, created_at, used_at) VALUES ('332', '478128', '2023-02-09 16:20:58.224443', NULL);
