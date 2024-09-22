@@ -2,7 +2,11 @@ version: 0.2
 
 env:
   variables:
+    AWS_DEFAULT_REGION: "us-east-1"
+    AWS_ACCOUNT_ID: "010928182936"
+    IMAGE_REPO_NAME: "coworking-project3"
     DOCKER_BUILDKIT: "1"
+    BUILDKIT_INLINE_CACHE: "1"
 
 phases:
   pre_build:
